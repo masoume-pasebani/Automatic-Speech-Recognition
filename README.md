@@ -8,7 +8,7 @@ The system also provides English translations of the transcribed text, enabling 
 
 ## Features
 
-- **Audio File Upload: Upload Persian audio files (MP3, MP4, WAV) for transcription.
+- Audio File Upload: Upload Persian audio files (MP3, MP4, WAV) for transcription.
 
 - **Speech Recognition (ASR): Converts spoken Persian audio into written Persian text using Google Speech Recognition or Whisper.
 
