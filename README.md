@@ -1,4 +1,3 @@
-# Automatic-Speech-Recognition
 
 # Persian Audio Speech Recognition (ASR) and Translation
 
@@ -20,40 +19,20 @@ The system also provides English translations of the transcribed text, enabling 
 
 - Bootstrap Frontend: User-friendly web interface for easy interaction with the app.
 
-Technologies Used
-Backend: Django (Python)
+##Technologies Used
+- Backend: Django (Python)
 
-Frontend: Bootstrap, HTML, CSS
+- Frontend: Bootstrap, HTML, CSS
 
-ASR Models:
-
-Google Speech Recognition
-
-Whisper Large V3 via Hugging Face
-
-Audio Handling: Pydub
-
-Translation: Deep Translator (Google Translate)
-
-Database: SQLite3 (default in Django)
+- ASR Models:
+- Google Speech Recognition
+- Whisper Large V3 via Hugging Face
+- Audio Handling: Pydub
+- Translation: Deep Translator (Google Translate)
+- Database: SQLite3 (default in Django)
 
 
 
-- **Audio File Upload**: Upload Persian audio files (MP3, MP4, WAV) for transcription.
-- **Speech Recognition (ASR)**: Converts spoken Persian audio into written text.
-- **Text and Subtitle Download**: Provides downloadable `.txt` and `.srt` files containing the transcription.
-- **English Translation**: Generates and displays an English translation of the Persian transcription.
-- **Django Backend**: Handles user requests, audio processing, and file management.
-- **Bootstrap Frontend**: User-friendly web interface for easy interaction with the app.
-
-## Technologies Used
-
-- **Backend**: Django (Python)
-- **Frontend**: Bootstrap, HTML, CSS
-- **Audio Processing**: Whisper or other ASR models
-- **Translation**: Google Translate API 
-- **Database**: SQLite3 (or another preferred database)
-  
 ## Setup Instructions
 
 1. **Clone the Repository**:
