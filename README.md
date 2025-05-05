@@ -39,3 +39,67 @@ The system also provides English translations of the transcribed text, enabling 
    ```bash
    git clone https://github.com/masoume-pasebani/Automatic-Speech-Recognition.git
    cd Automatic-Speech-Recognition
+
+
+## Setup Instructions
+
+### 1. Clone the Repository
+
+git clone https://github.com/masoume-pasebani/Automatic-Speech-Recognition.git
+cd Automatic-Speech-Recognition
+2. Create and Activate Virtual Environment
+bash
+Copy
+Edit
+python -m venv venv
+# On macOS/Linux:
+source venv/bin/activate
+# On Windows:
+venv\Scripts\activate
+3. Install Requirements
+bash
+Copy
+Edit
+pip install -r requirements.txt
+4. Download and Configure FFmpeg (Windows Only)
+Download FFmpeg from:
+
+👉 https://www.gyan.dev/ffmpeg/builds/
+
+Unzip the archive.
+
+Copy the full path to ffmpeg.exe.
+
+In your views.py, configure the path like this:
+
+python
+Copy
+Edit
+AudioSegment.ffmpeg = "C:/path/to/ffmpeg/bin/ffmpeg.exe"
+5. Run Django Migrations
+bash
+Copy
+Edit
+python manage.py migrate
+6. Start the Development Server
+bash
+Copy
+Edit
+python manage.py runserver
+Usage
+Open your browser and go to: http://127.0.0.1:8000/
+
+Upload a Persian audio file (MP3, MP4, or WAV).
+
+The system will:
+
+Transcribe the audio and show the Persian text.
+
+Display the English translation of the transcription.
+
+You can also:
+
+Download the transcription as a .txt file.
+
+Download subtitles in .srt format for media use.
+
