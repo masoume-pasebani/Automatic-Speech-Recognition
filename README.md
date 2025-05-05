@@ -20,12 +20,12 @@ The system also provides **English translations** of the transcribed text, enabl
 - **Backend**: Django (Python)
 - **Frontend**: Bootstrap, HTML, CSS
 - **Audio Processing**: Whisper or other ASR models
-- **Translation**: Google Translate API (or any custom translation solution)
+- **Translation**: Google Translate API 
 - **Database**: SQLite3 (or another preferred database)
   
 ## Setup Instructions
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/masoume-pasebani/Automatic-Speech-Recognition.git
+   cd Automatic-Speech-Recognition
