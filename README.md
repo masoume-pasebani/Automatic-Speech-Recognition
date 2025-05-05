@@ -1,6 +1,6 @@
 # Automatic-Speech-Recognition
 
-#Persian Audio Speech Recognition (ASR) and Translation
+# Persian Audio Speech Recognition (ASR) and Translation
 
 This project is a Persian Audio Speech Recognition (ASR) system built with Django in the backend and Bootstrap for the frontend. It allows users to upload Persian audio files (in formats such as MP3, MP4, or WAV), and the system will transcribe the audio into text. Additionally, the transcription can be downloaded as a .txt or .srt file.
 
@@ -10,15 +10,15 @@ The system also provides English translations of the transcribed text, enabling 
 
 - Audio File Upload: Upload Persian audio files (MP3, MP4, WAV) for transcription.
 
-- **Speech Recognition (ASR): Converts spoken Persian audio into written Persian text using Google Speech Recognition or Whisper.
+- Speech Recognition (ASR): Converts spoken Persian audio into written Persian text using Google Speech Recognition or Whisper.
 
-- **Text and Subtitle Download: Provides downloadable .txt and .srt files containing the transcription.
+- Text and Subtitle Download: Provides downloadable .txt and .srt files containing the transcription.
 
-- **English Translation: Generates and displays an English translation of the Persian transcription using Deep Translator.
+- English Translation: Generates and displays an English translation of the Persian transcription using Deep Translator.
 
-- **Django Backend: Handles user requests, audio processing, and file management.
+- Django Backend: Handles user requests, audio processing, and file management.
 
-- **Bootstrap Frontend: User-friendly web interface for easy interaction with the app.
+- Bootstrap Frontend: User-friendly web interface for easy interaction with the app.
 
 Technologies Used
 Backend: Django (Python)
