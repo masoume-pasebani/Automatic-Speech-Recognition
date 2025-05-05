@@ -19,7 +19,7 @@ The system also provides English translations of the transcribed text, enabling 
 
 - Bootstrap Frontend: User-friendly web interface for easy interaction with the app.
 
-##Technologies Used
+## Technologies Used
 - Backend: Django (Python)
 
 - Frontend: Bootstrap, HTML, CSS
