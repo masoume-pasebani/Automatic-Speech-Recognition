@@ -8,6 +8,7 @@ app_name = 'transcriber'
 urlpatterns = [
     path('', views.welcome, name='welcome'),
     path('upload/', views.upload_audio, name='upload_audio'),
+    path('translate/<int:transcription_id>/', views.translate_transcription, name='translate_transcription'),
     path('list/', views.list_transcriptions, name='list_transcriptions'),
     path('download/<int:pk>/', views.download_transcription_txt, name='download_transcription_txt'),
     path('download_srt/<int:pk>/', views.download_srt, name='download_transcription_srt'),
@@ -15,7 +16,7 @@ urlpatterns = [
     path('login/', views.Login, name='login'), 
     path('register/', views.Register, name='register'),
     path('logout/', views.Logout, name='logout'),
-
+    path('translate/<int:transcription_id>/', views.translate_transcription, name='translate'),
 ]
 
 
