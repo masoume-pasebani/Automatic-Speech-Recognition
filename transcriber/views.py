@@ -190,38 +190,54 @@ def recognize_audio(filepath):
 
     return full_text.strip()
 from django.contrib.auth.decorators import login_required
+from .utils import to_en_nllb  # adjust the import based on your project structure
+
+from django.shortcuts import render, redirect
+from django.urls import reverse
 
 def upload_audio(request):
-    transcription = None
-
     if request.method == 'POST':
         form = TranscriptionForm(request.POST, request.FILES)
         if form.is_valid():
             transcription = form.save(commit=False)
-
             if request.user.is_authenticated:
-                transcription.user = request.user  # Only assign if logged in
-
+                transcription.user = request.user
             transcription.save()
 
-            # Run transcription pipeline
+            # Transcribe
             audio_path = transcription.audio_file.path
             text_fa = recognize_audio(audio_path)
-            text_en = to_en(text_fa)
-
             transcription.text = text_fa
-            transcription.translation = text_en
             transcription.save()
 
-            return render(request, 'transcriber/upload.html', {
-                'form': TranscriptionForm(),
-                'transcription': transcription,
-                'translation': transcription.translation,
-            })
+            # Redirect to same page with ID
+            return redirect(reverse('transcriber:upload_audio') + f'?id={transcription.pk}')
     else:
         form = TranscriptionForm()
 
-    return render(request, 'transcriber/upload.html', {'form': form})
+    transcription = None
+    transcription_id = request.GET.get('id')
+    if transcription_id:
+        try:
+            transcription = Transcription.objects.get(pk=transcription_id)
+        except Transcription.DoesNotExist:
+            transcription = None
+
+    return render(request, 'transcriber/upload.html', {
+        'form': form,
+        'transcription': transcription,
+        'translation': transcription.translation if transcription else None,
+    })
+
+def translate_transcription(request, transcription_id):
+    transcription = get_object_or_404(Transcription, id=transcription_id)
+
+    if not transcription.translation:
+        translated_text = to_en_nllb(transcription.text)
+        transcription.translation = translated_text
+        transcription.save()
+
+    return redirect(reverse('transcriber:upload_audio') + f'?id={transcription.pk}')
 
 
 @staff_member_required
